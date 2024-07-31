@@ -14,7 +14,7 @@ const {
   sshPublicKey,
 } = await readEnvJson();
 
-const sshPublicKeyEscaped = sshPublicKey.replaceAll("/", "\\/");
+const sshPublicKeyEscaped = sshPublicKey.replace(/\//g, "\\/");
 const replaceCmdSSHPublicKey = `s/SSH_PUBLIC_KEY/${sshPublicKeyEscaped}/`;
 
 try {
